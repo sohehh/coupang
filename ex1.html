@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        .hrdTopWrap{
+            background-color: #333;
+        }
+        .hdrTop{
+            width: 80%;
+            max-width: 1080px; 
+            /* 본체의 값이 퍼센트로 되어있어야 맥스위드스가 적용가능 */
+            color:#fff;
+            outline: 1px solid red;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            line-height: 40px;
+            /* 로고랑 h4가 폰트이므로 line-height로 세로 가운데정렬 */
+        }
+        .hdrTop nav{
+            display: flex;
+        }
+        .hdrTop nav h4{
+            margin-left: 20px;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+        .hdrTop .logo i{
+            font-size: 16px;
+        }
+        
+        .hdrWrap{
+            background-color: #a497a9;
+        }
+        .hdrWrap header{
+            width: 80%;
+            max-width: 1080px;
+            color:#fff;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            line-height: 80px;
+        }
+        .hdrWrap header h1{
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        .hdrWrap header nav{
+            display: flex;
+        }
+        .hdrWrap header nav h4{
+            margin-left:20px;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+        /*공통 영역*/
+        .cntWrap .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            margin-top: 160px;
+        }
+        .cntWrap .content header{
+            text-align: center;
+        }
+        .cntWrap .content header h2{
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: capitalize;
+            line-height: 80px;
+        }
+        .cntWrap .content header p{
+            width: calc(100% / 12 * 4);
+            margin: 0 auto;
+            height: 40px;
+            overflow: hidden;
+            line-height: 20px;
+            font-size: 14px;
+        }
+        .cntWrap .content section{
+            margin-top:80px;
+        }
+        .cntWrap .content section .image{
+            background-color: #ccc;
+        }
+        .cntWrap .content section .text p{
+            line-height: 20px;
+            font-size: 14px;
+        }
+        .cntWrap .content section .text h3{
+            font-weight: 700;
+            line-height: 40px;
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+        .cntWrap .content section .text h5{
+            line-height: 40px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .cntWrap .content.cnt01 section>div{
+            display: flex;
+            justify-content: space-between;
+        }
+        .cntWrap .content.cnt01 .artTop article{
+            width: calc(50% - 20px);
+        }
+        .cntWrap .content.cnt01 .artBottom{
+            margin-top: 40px;
+        }
+        .cntWrap .content.cnt01 .artBottom article{
+            width: calc(100% / 3 - 20px);
+        }
+        .cntWrap .content.cnt01 .artTop .image{
+            height: 320px;
+        }
+        .cntWrap .content.cnt01 .artBottom .image{
+            height: 340px;
+        }
+        .cntWrap .content.cnt01 .artTop .text{
+            padding: 20px calc(100% / 6 * 1.5) 0 calc(100% / 6 * 0.5);
+
+        }
+        .cntWrap .content.cnt01 .artTop .text p{
+            height:80px;
+            overflow: hidden;
+        }
+        .cntWrap .content.cnt01 .artTop i{
+            line-height: 40px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .cntWrap .content.cnt01 .artBottom i{
+            line-height: 40px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .cntWrap .content.cnt01 .artBottom .text{
+            padding: 20px;
+            text-align: center;
+        }
+        .cntWrap .content.cnt01 .artBottom .text p{
+            height:80px;
+            overflow: hidden;
+        }
+        .cntWrap .content.cnt01 article i:last-child{
+            margin-left: 10px;
+        }
+
+        /* 방법 2번 */
+        /* .cntWrap .content.cnt02 header{
+            background-color: #ccc;
+            width: 100vw;
+            margin-left:min(calc((100vw - 1080px) / -2), calc((100vw - 80vw) / -2));
+        }  */
+        
+        /* 방법 1번 */
+        .cntWrap.cntWrap02 .content{
+            width: 100%;
+            max-width: none;
+        }
+        .cntWrap.cntWrap02 .content header{
+            background-color: rgb(187, 187, 187);
+            padding:160px 0 280px;
+            color: #fff;
+        }
+        .cntWrap.cntWrap02 .content header p{
+            width: calc(80% / 12 * 8);
+            max-width: 700px;
+        }
+
+        /* ----------------------------- */
+        .cntWrap.cntWrap02 .content section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            margin-top: -200px;
+            box-shadow: 2px 2px 4px #ccc;
+        }
+        .cntWrap.cntWrap02 .content section article{
+            display: flex;
+            background-color: #fff;
+        }
+        .cntWrap.cntWrap02 .content section article>div{
+            width: 50%;
+        }
+        .cntWrap.cntWrap02 .content section article .text{
+            padding:80px calc(100% / 12);
+            
+            text-align: center;
+        }
+        .cntWrap.cntWrap02 .content section article .text p{
+            height: 100px;
+            overflow: hidden;
+        }
+        .cntWrap.cntWrap02 .content section article .text .button{
+            background-color: #54465e;
+            line-height: 40px;
+            width:calc(100% / 4 * 2 + 20px);
+            /* ==50% 위에 20px은 궈터*/
+            border-radius: 30px;
+            margin: 0 auto;
+            margin-top: 20px;
+            color:#fff;
+            cursor: pointer;
+        }
+
+        .cntWrap.cntWrap03 .content.cnt03 section{
+            display: flex;
+            justify-content: space-between;
+        }
+        .cntWrap.cntWrap03 .content.cnt03 section article{
+            width: calc(100% / 12 * 3 - 20px);
+            /* 12 * 3 대신에 4가능 */
+            height:240px;
+            overflow: hidden;
+        }
+        .cntWrap.cntWrap03 .content.cnt03 section article:hover .text{
+            margin-top: -240px;
+        }
+        .cntWrap.cntWrap03 .content.cnt03 section article .image{
+            background-color: #ccc;
+            height: 240px;
+        }
+        .cntWrap.cntWrap03 .content.cnt03 section article .text{
+            padding: 40px 20px 60px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: margin-top 0.5s;
+        }
+        .cntWrap.cntWrap03 .content.cnt03 section article .text p{
+            height: 80px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .ftrWrap{
+            margin-top: 160px;
+            background-color: #988d9e;
+        }
+        .ftrWrap footer{
+            width: 80%;
+            max-width: 1080px;
+            text-align: center;
+            margin: 0 auto;
+            color:#fff;
+        }
+        .ftrWrap footer .logo{
+            font-size: 18px;
+            padding-top:80px;
+        }
+        .ftrWrap footer p{
+            height: 40px;
+            overflow: hidden;
+            padding: 40px calc(100% / 12 * 3);
+        }
+        .ftrWrap footer .sns{
+            font-size: 20px;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hrdTopWrap">
+        <div class="hdrTop">
+            <div class="logo">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3"></i>
+            </div>
+            <nav>
+                <h4>member</h4>
+                <h4>join us</h4>
+                <h4>contact</h4>
+            </nav>
+        </div>
+    </div>
+    <div class="hdrWrap">
+        <header>
+            <h1>logohere</h1>
+            <nav>
+                <h4>about</h4>
+                <h4>news</h4>
+                <h4>portfolio</h4>
+                <h4><i class="fa-solid fa-bars"></i></h4>
+            </nav>
+        </header>
+    </div>
+    <div class="cntWrap cntWrap01">
+        <div class="content cnt01">
+            <header>
+                <h2>content title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+            </header>
+            <section>
+                <div class="artTop">
+                    <article>
+                        <div class="image"></div>
+                        <div class="text">
+                            <h3>Segment Title</h3>
+                            <h5>Lorem ipsum dolor sit amet</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                            <div class="logo"><i class="fa-solid fa-thumbs-up"></i><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image"></div>
+                        <div class="text">
+                            <h3>Segment Title</h3>
+                            <h5>Lorem ipsum dolor sit amet</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                            <div class="logo"><i class="fa-solid fa-thumbs-up"></i><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="artBottom">
+                    <article>
+                        <div class="image"></div>
+                        <div class="text">
+                            <h3>Segment Title</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                            <div class="logo"><i class="fa-solid fa-thumbs-up"></i><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image"></div>
+                        <div class="text">
+                            <h3>Segment Title</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                            <div class="logo"><i class="fa-solid fa-thumbs-up"></i><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image"></div>
+                        <div class="text">
+                            <h3>Segment Title</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                            <div class="logo"><i class="fa-solid fa-thumbs-up"></i><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="cntWrap cntWrap02">
+        <div class="content cnt02">
+            <header>
+                <h2>Contents Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+            </header>
+            <section>
+                <article>
+                    <div class="image"></div>
+                    <div class="text">
+                        <h3>Segment Title</h3>
+                        <h5>Lorem ipsum dolor sit amet</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                        <div class="button">button</div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="cntWrap cntWrap03">
+        <div class="content cnt03">
+            <header>
+                <h2>Content</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+            </header>
+            <section>
+                <article>
+                    <div class="image"></div>
+                    <div class="text">
+                        <h3>Segment Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="image"></div>
+                    <div class="text">
+                        <h3>Segment Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="image"></div>
+                    <div class="text">
+                        <h3>Segment Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="image"></div>
+                    <div class="text">
+                        <h3>Segment Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="ftrWrap">
+        <footer>
+            <div class="logo">logohere</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime repellendus mollitia dicta, fuga est numquam culpa voluptatem debitis, recusandae molestias quibusdam, harum in minus temporibus beatae totam provident similique!</p>
+            <div class="sns">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
